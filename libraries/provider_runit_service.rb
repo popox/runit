@@ -158,17 +158,17 @@ class Chef
           service_link.run_action(:create)
 
           Chef::Log.debug("waiting until named pipe #{service_dir_name}/supervise/ok exists.")
-          until ::FileTest.pipe?("#{service_dir_name}/supervise/ok")
-            sleep 1
-            Chef::Log.debug('.')
-          end
+          #until ::FileTest.pipe?("#{service_dir_name}/supervise/ok")
+          #  sleep 1
+          #  Chef::Log.debug('.')
+          #end
 
           if new_resource.log
             Chef::Log.debug("waiting until named pipe #{service_dir_name}/log/supervise/ok exists.")
-            until ::FileTest.pipe?("#{service_dir_name}/log/supervise/ok")
-              sleep 1
-              Chef::Log.debug('.')
-            end
+            #until ::FileTest.pipe?("#{service_dir_name}/log/supervise/ok")
+            #  sleep 1
+            #  Chef::Log.debug('.')
+            #end
           end
         end
 
